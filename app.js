@@ -3,6 +3,16 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+//using middleware for static files
+app.use(express.static("public")); //collect static files in public folder
+
+//writing middleware
+app.use("/ilkin", (req, res, next) => {
+  var today = new Date();
+  console.log(today.toLocaleString());
+  next();
+});
+
 //if get request for '/' send this file path
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "main.html")); //listen file with express.js
