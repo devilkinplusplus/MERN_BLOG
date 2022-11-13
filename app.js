@@ -14,7 +14,7 @@ const requestListener = function (req, res) {
   } 
   else {
     res.statusCode = 404;
-    res.end("Chupa Not Found");
+    res.end("Cupa Not Found");
   }
 };
 

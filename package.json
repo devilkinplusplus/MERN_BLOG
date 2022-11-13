@@ -17,7 +17,8 @@
     "url": "https://github.com/devilkinplusplus/MERN_BLOG/issues"
   },
   "homepage": "https://github.com/devilkinplusplus/MERN_BLOG#readme",
-  "devDependencies": {
-    "@types/node": "^18.11.9"
+  
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
