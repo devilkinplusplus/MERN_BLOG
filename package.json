@@ -1,0 +1,23 @@
+{
+  "name": "mern_blog_app",
+  "version": "1.0.0",
+  "description": "\"# MERN_BLOG\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devilkinplusplus/MERN_BLOG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devilkinplusplus/MERN_BLOG/issues"
+  },
+  "homepage": "https://github.com/devilkinplusplus/MERN_BLOG#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.9"
+  }
+}
