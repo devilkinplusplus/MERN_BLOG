@@ -3,69 +3,29 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
-//using middleware for static files
-app.use(express.static("public")); //collect static files in public folder
+//collect static files in public folder
+app.use(express.static("public"));
+app.use(express.static("site"));
 
-//writing middleware
-app.use("/ilkin", (req, res, next) => {
-  var today = new Date();
-  console.log(today.toLocaleString());
-  next();
-});
-
-//if get request for '/' send this file path
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "main.html")); //listen file with express.js
+  res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
-//if get request for '/ilkin' send this file path
-app.get("/ilkin", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "ilkin.html"));
+app.get("/about", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "site/about.html"));
 });
 
-//get request with query string
-app.get("/users/:userId/movies/:moviesId", (req, res) => {
-  res.send(
-    `<h2>Username : ${req.params.userId} </h2>
-      <h3>Movies which is Ilkin watched</h3>
-       <ul>
-       <li>Life in a Year</li>
-       <li>Goal</li>
-       <li>Jobs</li>
-       <li>Birdge to terrahopia</li>
-       
-       </ul>
-       `
-  );
+app.get("/contact", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "site/contact.html"));
+});
+
+app.get("/blog", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "site/blog.html"));
+});
+app.get("/blog-single", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "site/blog-single.html"));
 });
 
 app.listen(port, () => {
   console.log(`App listening on port : http://localhost:${port}`);
 });
-
-/* Node js */
-// const http = require("http");
-// const fs = require("fs");
-
-// //listen files with node.js
-// const mainPage = fs.readFileSync("main.html");
-// const myPage = fs.readFileSync("ilkin.html");
-
-// const requestListener = function (req, res) {
-//   if (req.url === "/") {
-//     res.end(mainPage);
-//   }
-//   else if (req.url === "/ilkin") {
-//     res.end(myPage);
-//   }
-//   else {
-//     res.statusCode = 404;
-//     res.end("Cupa Not Found");
-//   }
-// };
-
-// const server = http.createServer(requestListener);
-// //url : localhost:8080
-// server.listen(8080, function () {
-//   console.log("Server started on : http://localhost:8080");
-// });
