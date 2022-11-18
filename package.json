@@ -4,7 +4,7 @@
   "description": "\"# MERN_BLOG\"",
   "main": "app.js",
   "scripts": {
-    "boot":"nodemon app.js"
+    "boot": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,8 @@
     "url": "https://github.com/devilkinplusplus/MERN_BLOG/issues"
   },
   "homepage": "https://github.com/devilkinplusplus/MERN_BLOG#readme",
-  
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6"
   }
 }

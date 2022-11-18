@@ -1,29 +1,35 @@
 const express = require("express");
+const exphbs = require("express-handlebars");
 const path = require("path");
 const app = express();
 const port = 3000;
 
 //collect static files in public folder
 app.use(express.static("public"));
-app.use(express.static("site"));
+
+//exphbs.engine() method runs layout/main defaultly
+app.engine("handlebars", exphbs.engine());
+app.set("view engine", "handlebars");
+app.set("views", "./views");
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "index.html"));
+  res.render("site/index");
 });
 
 app.get("/about", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "site/about.html"));
+  res.render("site/about");
 });
 
 app.get("/contact", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "site/contact.html"));
+  res.render("site/contact");
 });
 
 app.get("/blog", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "site/blog.html"));
+  res.render("site/blog");
 });
+
 app.get("/blog-single", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "site/blog-single.html"));
+  res.render("site/blog_single");
 });
 
 app.listen(port, () => {
