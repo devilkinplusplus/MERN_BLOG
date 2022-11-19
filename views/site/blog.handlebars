@@ -10,6 +10,8 @@
 			<div class="row">
 				<main id="main" class="col-md-8">
 					<div class="row">
+						<!--Start loop-->
+						{{#each posts}}
 						<div class="col-md-6">
 							<div class="blog">
 								<div class="blog-img">
@@ -18,79 +20,37 @@
 								<div class="blog-content">
 									<ul class="blog-meta">
 										<li><i class="fas fa-users"></i><span class="writer">John Doe</span></li>
-										<li><i class="fas fa-clock"></i><span class="writer">17 Dec 2018</span></li>
+										<li><i class="fas fa-clock"></i><span class="writer">19 November 2022</span></li>
 										<li><i class="fas fa-comments"></i><span class="writer">13</span></li>
 									</ul>
-									<h3>Lorem Ipsum</h3>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-									<a href="blog-single">Read More</a>
+									<h3>{{title}}</h3>
+									<p>{{content}}</p>
+									<a href="/blog/{{_id}}">Read More</a>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="blog">
-								<div class="blog-img">
-									<img src="img/blog2.jpg" class="img-fluid">
-								</div>
-								<div class="blog-content">
-									<ul class="blog-meta">
-										<li><i class="fas fa-users"></i><span class="writer">John Doe</span></li>
-										<li><i class="fas fa-clock"></i><span class="writer">17 Dec 2018</span></li>
-										<li><i class="fas fa-comments"></i><span class="writer">13</span></li>
-									</ul>
-									<h3>Lorem Ipsum</h3>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-									<a href="blog-single">Read More</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog">
-								<div class="blog-img">
-									<img src="img/blog3.jpg" class="img-fluid">
-								</div>
-								<div class="blog-content">
-									<ul class="blog-meta">
-										<li><i class="fas fa-users"></i><span class="writer">John Doe</span></li>
-										<li><i class="fas fa-clock"></i><span class="writer">17 Dec 2018</span></li>
-										<li><i class="fas fa-comments"></i><span class="writer">13</span></li>
-									</ul>
-									<h3>Lorem Ipsum</h3>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-									<a href="blog-single">Read More</a>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="blog">
-								<div class="blog-img">
-									<img src="img/blog1.jpg" class="img-fluid">
-								</div>
-								<div class="blog-content">
-									<ul class="blog-meta">
-										<li><i class="fas fa-users"></i><span class="writer">John Doe</span></li>
-										<li><i class="fas fa-clock"></i><span class="writer">17 Dec 2018</span></li>
-										<li><i class="fas fa-comments"></i><span class="writer">13</span></li>
-									</ul>
-									<h3>Lorem Ipsum</h3>
-									<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-									<a href="blog-single">Read More</a>
-								</div>
-							</div>
-						</div>
-                        <nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="#" tabindex="-1">Previous</a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
+						{{/each}}
+						<!--End loop-->
+
+					    <nav aria-label="Page navigation example">
+							<ul class="pagination justify-content-center">
+								<li class="page-item disabled">
+									<a class="page-link" href="#" tabindex="-1">Previous</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">1</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">2</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">3</a>
+								</li>
+								<li class="page-item">
+									<a class="page-link" href="#">Next</a>
+								</li>
+							</ul>
+						</nav>
 					</div>
 				</main>
 				
@@ -125,7 +85,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img class="img-fluid" src="./img/post1.jpg" alt="">Lorem Ipsum
+								<img class="img-fluid" src="/img/post1.jpg" alt="">Lorem Ipsum
 							</a>
 							<ul class="blog-meta">
 								<li>Oct 18, 2017</li>
@@ -136,7 +96,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="./img/post2.jpg" alt="">Lorem Ipsum
+								<img src="/img/post2.jpg" alt="">Lorem Ipsum
 							</a>
 							<ul class="blog-meta">
 								<li>Oct 18, 2017</li>
@@ -148,7 +108,7 @@
 						<!-- single post -->
 						<div class="widget-post">
 							<a href="#">
-								<img src="./img/post3.jpg" alt="">Lorem Ipsum
+								<img src="/img/post3.jpg" alt="">Lorem Ipsum
 							</a>
 							<ul class="blog-meta">
 								<li>Oct 18, 2017</li>
