@@ -32,6 +32,14 @@ app.get("/blog-single", (req, res) => {
   res.render("site/blog_single");
 });
 
+app.get("/register", (req, res) => {
+  res.render("site/register");
+});
+
+app.get("/login", (req, res) => {
+  res.render("site/login");
+});
+
 app.listen(port, () => {
   console.log(`App listening on port : http://localhost:${port}`);
 });
