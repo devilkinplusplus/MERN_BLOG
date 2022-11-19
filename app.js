@@ -1,8 +1,11 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const path = require("path");
 const app = express();
+const mongoose = require("mongoose");
 const port = 3000;
+
+//connect to database
+mongoose.connect("mongodb://localhost/nodeblog_db");
 
 //collect static files in public folder
 app.use(express.static("public"));
@@ -12,33 +15,10 @@ app.engine("handlebars", exphbs.engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
-app.get("/", (req, res) => {
-  res.render("site/index");
-});
-
-app.get("/about", (req, res) => {
-  res.render("site/about");
-});
-
-app.get("/contact", (req, res) => {
-  res.render("site/contact");
-});
-
-app.get("/blog", (req, res) => {
-  res.render("site/blog");
-});
-
-app.get("/blog-single", (req, res) => {
-  res.render("site/blog_single");
-});
-
-app.get("/register", (req, res) => {
-  res.render("site/register");
-});
-
-app.get("/login", (req, res) => {
-  res.render("site/login");
-});
+//call where you need
+const main  = require("./routes/main");
+//call as middleware
+app.use("/", main);
 
 app.listen(port, () => {
   console.log(`App listening on port : http://localhost:${port}`);
