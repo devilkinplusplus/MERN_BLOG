@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const port = 3000;
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
-
+const date = require("./helpers/generateDate").genereteDate;//call date function here
 //connect to database
 mongoose.connect("mongodb://localhost/nodeblog_db");
 
@@ -16,7 +16,7 @@ app.use(fileUpload());
 app.use(express.static("public"));
 
 //exphbs.engine() method runs layout/main defaultly
-app.engine("handlebars", exphbs.engine());
+app.engine("handlebars", exphbs.engine({ helpers: { genereteDate: date } }));//send date format function as helpers
 app.set("view engine", "handlebars");
 app.set("views", "./views");
 
