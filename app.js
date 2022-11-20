@@ -4,9 +4,13 @@ const app = express();
 const mongoose = require("mongoose");
 const port = 3000;
 const bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
 
 //connect to database
 mongoose.connect("mongodb://localhost/nodeblog_db");
+
+//use the file upload middleware
+app.use(fileUpload());
 
 //collect static files in public folder
 app.use(express.static("public"));
